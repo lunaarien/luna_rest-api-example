@@ -18,8 +18,8 @@ class NewManufacturingAddress extends Model
         "barangay"
     ];
 
-    public function newMachine() {
-        return $this->belongsTo('App\Models\NewMachine');
+    public function newmachines() {
+        return $this->hasMany('App\Models\NewMachine', 'manufacturing_id');
     }
     
 }

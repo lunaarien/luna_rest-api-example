@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            //insert_records_in_users_table::class,
+            insert_records_in_users_table::class,
             //insert_records_in_machine_table::class,
-            NewMachineSeeder::class,
             NewManufacturingAddressSeeder::class,
+            NewMachineSeeder::class
         ]);
 
         

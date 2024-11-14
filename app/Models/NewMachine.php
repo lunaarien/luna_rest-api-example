@@ -20,8 +20,8 @@ class NewMachine extends Model
         'description_of_machine',
     ];
 
-    public function newManufacturingAddress() {
-        return $this->belongsTo('App\Models\NewManufacturingAddress');
+    public function newmanufacturingaddress() {
+        return $this->belongsTo('App\Models\NewManufacturingAddress', 'manufacturing_id');
     }
 
 }

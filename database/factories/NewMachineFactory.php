@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\NewManufacturingAddress;
 
 class NewMachineFactory extends Factory
 {
@@ -14,7 +15,8 @@ class NewMachineFactory extends Factory
     public function definition()
     {
         return [
-            'manufacturing_id' => $this->faker->numberBetween(1, 50),
+            'manufacturing_id' => NewManufacturingAddress::inRandomOrder()->first()->id 
+                                  ?? NewManufacturingAddress::factory(),
             'machine_name' => $this->faker->word,
             'brand' => $this->faker->company, 
             'power_rating' => $this->faker->optional()->randomFloat(2, 0, 100), 

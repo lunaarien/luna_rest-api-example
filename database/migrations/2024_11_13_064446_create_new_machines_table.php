@@ -15,8 +15,7 @@ class CreateNewMachinesTable extends Migration
     {
         Schema::create('new_machines', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('manufacturing_id')->unsigned();
-            $table->string('machine_name'); 
+            $table->foreignId('manufacturing_id')->constrained('new_manufacturing_addresses')->onDelete('cascade');            $table->string('machine_name'); 
             $table->string('brand');  
             $table->decimal('power_rating', 5, 2)->nullable(); 
             $table->date('manufactured_date')->nullable(); 
