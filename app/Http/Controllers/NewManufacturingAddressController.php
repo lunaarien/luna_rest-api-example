@@ -12,10 +12,10 @@ class NewManufacturingAddressController extends Controller
         {
             if (empty($id)) {
                 $ma = NewManufacturingAddress::get();
-                return response()->json([['ma'=>$ma]],200);
+                return response()->json([['manufacturing address'=>$ma]],200);
             } else {    
                 $ma = NewManufacturingAddress::find($id);
-                return response()->json([['ma'=>$ma]],200);
+                return response()->json([['manufacturing address'=>$ma]],200);
 
             }
         } 
